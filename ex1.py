@@ -43,3 +43,17 @@ trip_length_seconds = taxi[:,8]
 trip_length_hours = trip_length_seconds / 3600 # 3600 seconds is one hour
 
 trip_mph = trip_distance_miles/ trip_length_hours
+
+mph_min = trip_mph.min()
+mph_max = trip_mph.max()
+mph_mean = trip_mph.mean()
+
+# we'll compare against the first 5 rows only
+taxi_first_five = taxi[:5]
+# select these columns: fare_amount, fees_amount, tolls_amount, tip_amount
+fare_components = taxi_first_five[:,9:13]
+fare_sums = fare_components.sum(axis=1)
+fare_totals = taxi_first_five[:,13]
+
+print(fare_totals)
+print(fare_sums)
