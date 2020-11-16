@@ -36,3 +36,10 @@ rows_100_to_200_column_14 = taxi[100:201, 14]
 fare_amount = taxi[:,9]
 fees_amount = taxi[:,10]
 fare_and_fees = fare_amount + fees_amount
+
+trip_distance_miles = taxi[:,7]
+trip_length_seconds = taxi[:,8]
+
+trip_length_hours = trip_length_seconds / 3600 # 3600 seconds is one hour
+
+trip_mph = trip_distance_miles/ trip_length_hours
